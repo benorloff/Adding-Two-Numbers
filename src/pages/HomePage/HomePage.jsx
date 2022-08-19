@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import { Button, Form, Grid, Header, Image, Segment, Modal } from "semantic-ui-react";
-import userService from "../../utils/userService";
+import calculateService from "../../utils/calculateService";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../components/Loader/Loader";
 
@@ -31,9 +31,8 @@ export default function HomePage({ user, handleSignUpOrLogin }) {
     }
     try {
       setLoading(true);
-      await userService.signup(formData)
-      console.log('userService.signup is done')
-      handleSignUpOrLogin()
+      await calculateService.add(formData)
+      console.log('calculateService.add is done')
       setLoading(false);
       navigate('/stripe-onboard')
     } catch(err){
