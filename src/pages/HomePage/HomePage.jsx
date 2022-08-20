@@ -66,6 +66,7 @@ export default function HomePage() {
                     fluid
                     type="number"
                     name="first"
+                    role="first"
                     placeholder="First Number"
                     label="First Number"
                     value={numbers.first}
@@ -76,6 +77,7 @@ export default function HomePage() {
                     fluid
                     type="number"
                     name="second"
+                    role="second"
                     placeholder="Second Number"
                     label="Second Number"
                     value={numbers.second}
@@ -83,14 +85,14 @@ export default function HomePage() {
                     required
                     />
                 </Form.Group>
-                <Button type="submit" className="btn">
+                <Button type="submit" className="btn" role="add">
                     Add Two Numbers
                 </Button>
                 </Segment>
                 {error ? <ErrorMessage error={error} /> : null}
             </Form>
             { sum && 
-                <Header as="h2" textAlign="center">
+                <Header as="h2" data-testid="solution" textAlign="center">
                     Solution: {sum}
                 </Header>
             }
