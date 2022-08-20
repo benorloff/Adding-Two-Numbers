@@ -91,11 +91,11 @@ export default function HomePage() {
                 </Segment>
                 {error ? <ErrorMessage error={error} /> : null}
             </Form>
-            { sum && 
-                <Header as="h2" data-testid="solution" textAlign="center">
-                    Solution: {sum}
+                <Header as="h2" role="solution" textAlign="center">
+                    { sum && 
+                        `Solution: ${sum}`
+                    }
                 </Header>
-            }
             </Grid.Column>
         </Grid>
         </>

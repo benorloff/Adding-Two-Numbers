@@ -1,5 +1,5 @@
 const response = {
-    sum: 0,
+    sum: 333,
 };
 
 export default async function mockFetch(url) {

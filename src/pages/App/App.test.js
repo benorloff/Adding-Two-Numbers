@@ -40,10 +40,8 @@ test('should be able to add two numbers', async () => {
   await waitForElementToBeRemoved(() => screen.queryByText(/Loading/i))
 
   // Verify the solution is rendered
-  expect(await screen.getByTestId("solution")).toBeInTheDocument();
-  const solution = screen.getByRole("heading", { name: "solution"});
-  expect(solution).toHaveTextContent("Solution: 333");
-
+  const solution = screen.getByRole("solution")
+  expect(solution).toHaveTextContent(333);
 
 })
 
