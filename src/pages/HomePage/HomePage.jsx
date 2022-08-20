@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import { Button, Form, Grid, Header, Image, Segment, Modal } from "semantic-ui-react";
-import calculateService from "../../utils/calculateService";
 import Loading from "../../components/Loader/Loader";
 
-export default function HomePage({ user, handleSignUpOrLogin }) {
+export default function HomePage() {
 
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false);
@@ -39,10 +38,6 @@ export default function HomePage({ user, handleSignUpOrLogin }) {
                 setLoading(false);
                 setError(error);
             })
-    }
-
-    function handleClear() {
-        
     }
 
     if (error) {
@@ -90,9 +85,6 @@ export default function HomePage({ user, handleSignUpOrLogin }) {
                 </Form.Group>
                 <Button type="submit" className="btn">
                     Add Two Numbers
-                </Button>
-                <Button onClick={handleClear} className="btn">
-                    Clear
                 </Button>
                 </Segment>
                 {error ? <ErrorMessage error={error} /> : null}
