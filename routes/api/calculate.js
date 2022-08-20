@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const usersCtrl = require("../../controllers/users");
+const calculateCtrl = require("../../controllers/calculate");
 
 /*---------- Public Routes ----------*/
-router.post("/login", usersCtrl.login);
+router.post("/add", calculateCtrl.add);
 
 /*---------- Protected Routes ----------*/
 
